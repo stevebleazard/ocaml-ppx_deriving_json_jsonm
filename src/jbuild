@@ -1,0 +1,11 @@
+(jbuild_version 1)
+
+(library
+ ((name ppx_deriving_json_jsonm)
+  (public_name ppx_deriving_json_jsonm.api)
+  (libraries (result ppx_deriving_json_lib))
+  (preprocess (action (run ppxfind -legacy ppx_tools.metaquot --as-pp ${<})))
+  (ppx_runtime_libraries (ppx_deriving_json_lib.runtime json_of_jsonm))
+  (modules (ppx_deriving_jsonm))
+  (kind ppx_deriver)))
+
