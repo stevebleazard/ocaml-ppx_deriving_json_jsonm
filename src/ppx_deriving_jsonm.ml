@@ -15,7 +15,7 @@ module Jsonm_deriver : P.Json_deriver = struct
     | [%type: Json_of_jsonm_lib.Json_string.t] -> true
     | _ -> false
   let runtime_module = "Ppx_deriving_json_lib_runtime"
-  let fields_module = "Json_fields"
+  let fields_module = "Jsonm_fields"
   let encode_float_function _attrs =
     [%expr fun x -> `Float x]
   let encode_integer_as_float to_float _attrs =
